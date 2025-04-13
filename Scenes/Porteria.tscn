@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx6udfaic7pia"]
+
+[ext_resource type="Script" uid="uid://dk4p4tv1p1t4p" path="res://Porteria.gd" id="1_o1big"]
+[ext_resource type="Texture2D" uid="uid://by4dsmtxfu3wi" path="res://Porteria/porteria.png" id="2_4c5m4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s0n5y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4c5m4")
+}],
+"loop": true,
+"name": &"porteria",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qquur"]
+size = Vector2(389, 12)
+
+[node name="Porteria" type="StaticBody2D"]
+position = Vector2(238, 674)
+disable_mode = 1
+collision_layer = 2
+script = ExtResource("1_o1big")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_s0n5y")
+animation = &"porteria"
+frame_progress = 0.128655
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -25)
+shape = SubResource("RectangleShape2D_qquur")
